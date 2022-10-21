@@ -1,0 +1,16 @@
+.footer {
+    background-color: $main-bg;
+    box-shadow: $box-shadow;
+
+    &-content {
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.7rem;
+        color: $txt-second-color;
+        font-weight: 600;
+
+        @include mobile {
+            font-size: 1.4rem;
+        }
+    }   
+}

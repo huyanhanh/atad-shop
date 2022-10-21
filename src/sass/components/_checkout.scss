@@ -1,0 +1,86 @@
+.checkout-col {
+    @include flex(space-between, none);
+
+    @include mobile {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &-left {
+        width: 65%;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &-right {
+        width: 31%;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .checkout-cart {
+            padding: 20px;
+            font-size: 1.6rem;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #d1d1d1;
+
+            h6 {
+                margin-bottom: 17px;
+                @include flex(space-between, center)
+            }
+
+            h4 {
+                padding-top: 30px;
+                border-top: 1px solid #909090;
+            }
+        }
+    }
+}
+
+.checkout {
+    &__form {
+
+        @include mobile {
+            margin-top: 30px;
+        }
+
+        &-label {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .custom-input {
+            width: 100%;
+            border: 1px solid #999999;
+            border-radius: 4px;
+            padding: 0 5px;
+            margin-bottom: 20px;
+
+            .checkout-input {
+                font-size: 1.4rem;
+                padding: 10px 10px;
+                width: 100%;
+                border: none;
+                outline: none;
+                color: $txt-second-color;
+            }
+        }
+
+        &-select {
+            &-option {
+                padding: 8px 20px;
+                border: 1px solid #b8b6b6;
+                cursor: pointer;
+                border-radius: 5px;
+                outline: none;
+                background-color: #3c4748;
+                color: $txt-white;
+            }
+        }
+    }
+}

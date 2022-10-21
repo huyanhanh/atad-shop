@@ -1,0 +1,132 @@
+.product-detail {
+    padding-top: 50px;
+    height: 100%;
+
+    &__left__image {
+        width: 400px;
+        height: 400px;
+        pointer-events: none;
+    }
+
+    &__right {
+        &-text {
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            margin-bottom: 20px;
+        }
+
+        &__rating {
+            @include flex(none, center);
+            margin-bottom: 20px;
+
+            &-star {
+                font-size: 1.3rem;
+                margin-right: 10px;
+                color: #ef9930;
+            }
+
+            &-avg {
+                font-size: 1.3rem;
+                color: $txt-second-color;
+            }
+        }
+
+        &__price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        &__category {
+            margin-bottom: 30px;
+            display: block;
+            font-size: 1.4rem;
+        }
+
+        &__short-description {
+            font-size: 1.4rem;
+            color: $txt-second-color;
+            margin-bottom: 20px;
+            line-height: 1.4rem;
+        }
+    }
+}
+
+.tab-wrapper {
+    color: $txt-main-color;
+    cursor: pointer;
+    font-weight: 400;
+
+    span {
+        margin-right: 20px;
+        font-size: 1.5rem;
+    }
+}
+
+.active {
+    font-weight: 600;
+    color: rgb(47, 47, 47);
+}
+
+.tab__content {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    width: 50%;
+    height: 100%;
+    color: $txt-second-color;
+    padding: 0 20px;
+
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.tab-content__review {
+    &-text {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+    }
+
+    &-rating {
+        color: #ef9930;
+        margin-bottom: 7px;
+    }
+
+    &-cmt {
+        margin-bottom: 30px;
+    }
+
+    &__form {
+        width: 70%;
+        margin: auto;
+        margin-top: 20px;
+
+        > h3 {
+            font-size: 1.5rem;
+            color: $txt-main-color;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        &-group {
+            width: 100%;
+            border: 1px solid #b3b2b2;
+            padding: 8px 20px;
+            margin: 15px 0;
+
+            > input, > textarea {
+                border: none;
+                outline: none;
+                font-size: 1.3rem;
+                width: 100%;
+            }
+
+            > textarea {
+                resize: none;
+            }
+
+        }
+    }
+}

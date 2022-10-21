@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* reset browser default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 13px;
+
+    @include mobile {
+        font-size: 11px;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+// loop color into variable
+@each $color, $val in $colors  {
+    .color-#{$color} {
+        color: $val;
+    }
+
+    .bg-#{$color} {
+        background-color: $val;
+    }
+}
+
+// loop number with grid 
+@each $number in $numbers {
+    .grid-col-#{$number} {
+        grid-template-columns: repeat($number, 1fr);
+    }
+}
+
+// tablet
+@each $number in $numbers {
+    .grid-col-md-#{$number} {
+        @include tablet {
+            grid-template-columns: repeat($number, 1fr);
+        }
+    }
+}
+
+// moblie
+@each $number in $numbers {
+    .grid-col-sm-#{$number} {
+        @include mobile {
+            grid-template-columns: repeat($number, 1fr);
+        }
+    }
+}
+
+// container
+.container {
+    width: 100%;
+    max-width: 1620px;
+    padding: 0 50px;
+    margin: auto;
+
+    @include tablet {
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 10px;
+    }
+}
+
+.main {
+    margin-top: $header-height;
+    margin-bottom: 2rem;
+    min-height: 100vh;
+
+    @include tablet {
+        margin-top: calc(#{$header-tablet-height} + 20px);
+    }
+
+    @include mobile {
+        margin-top: calc(#{$header-mobile-height} + 10px);
+    }
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+
+    @include mobile {
+        gap: 0;
+    }
+}

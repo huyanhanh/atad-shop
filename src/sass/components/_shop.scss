@@ -1,0 +1,53 @@
+.toolbars {
+    &__search {
+        &__box {
+            width: 100%;
+            @include flex(space-between, center);
+            border: 1px solid rgb(73, 73, 73);
+            border-radius: 5px;
+            cursor: pointer;
+
+            > input {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: 8px 10px;
+                margin-left: 8px;
+                font-size: 1.2rem;
+                letter-spacing: 0.2rem;
+            }
+
+            > span svg {
+                margin-right: 10px;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+
+    .filter__widget select {
+        padding: 8px 20px;
+        border: 1px solid #b8b6b6;
+        cursor: pointer;
+        border-radius: 5px;
+        outline: none;
+        background-color: #3c4748;
+        color: $txt-white;
+    }
+
+    .filter__widget select:focus {
+        outline: none;
+    }
+
+    .filter__widget select>option {
+        font-size: 1rem;
+    }
+
+    &__filter,
+    &__sort,
+    &__search {
+        @include mobile {
+            margin-bottom: 20px;
+        }
+    }
+}

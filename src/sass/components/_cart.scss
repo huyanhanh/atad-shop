@@ -1,0 +1,130 @@
+.product-cart {
+    @include flex(space-between, none);
+    width: 100%;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__left {
+        width: 70%;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        &__del {
+            >svg {
+                cursor: pointer;
+            }
+        }
+
+        .table {
+            width: 100%;
+
+            tr {
+
+                td,
+                th {
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                th {
+                    background-color: #5a90e8;
+                    font-size: 1.4rem;
+                }
+
+                td {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: $txt-second-color;
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+                        object-fit: contain;
+                    }
+                }
+
+            }
+
+            tr {
+                &:nth-child(2n) {
+                    background-color: white;
+                }
+
+                &:nth-child(2n+1) {
+                    background-color: #ebebeb;
+                }
+            }
+        }
+    }
+
+    &__right {
+        border: 1px solid rgba(159, 163, 159, 0.933);
+        height: 100%;
+        padding: 10px;
+        width: 25%;
+        border-radius: 4px;
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 30px
+        }
+
+        &-checkout {
+            @include flex(space-evenly, center);
+            margin-bottom: 20px;
+
+            h6,
+            span {
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+        }
+
+        &-btn {
+            &-checkout, 
+            &-shop {
+                width: 100%;
+                border: 1px solid #ebebeb;
+                background-color: $main-color;
+                cursor: pointer;
+                transition: all 0.4s ease;
+            }
+
+            &-checkout:hover, 
+            &-shop:hover {
+                background-color: $main-color
+            }
+
+            &-checkout {
+                @include flex(center, center);
+                margin-bottom: 10px;
+
+                &-cart {
+                    color: $txt-white;
+                    width: 100%;
+                    display: block;
+                    padding: 10px 15px;
+                    border: none;
+                    font-size: 1.4rem;
+                    outline: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+
+            &-shop {
+                @include flex(center, center);
+            }
+        }
+        p {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+}
