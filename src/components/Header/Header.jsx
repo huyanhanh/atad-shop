@@ -127,7 +127,6 @@ const Header = () => {
 									currentUser
 										? <img
 											className='header__menu__item__img-avatar'
-											onClick={toggleProfile}
 											src={currentUser.photoURL}
 											alt="avartar" />
 										: <span><BiUser /></span>
